@@ -15,8 +15,4 @@ nav a{
     text-decoration: none;
     color:white;
     margin-right: 20px;
-    padding: 5px;
-}
-nav a:hover{
-    background-color: gray;
 }
