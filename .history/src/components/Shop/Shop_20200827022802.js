@@ -14,7 +14,7 @@ const Shop = () => {
                 <ul>
                     {
                         products.map(pd =>
-                            <Product product={pd}></Product>
+                            <Product product={product}></Product>
                         )
                     }
                 </ul>
