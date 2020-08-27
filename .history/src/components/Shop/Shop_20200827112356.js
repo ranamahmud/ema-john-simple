@@ -29,8 +29,9 @@ const Shop = () => {
                 </ul>
             </div>
             <div className="cart-container">
-                <Cart cart = {cart}></Cart>
-                
+                <Cart></Cart>
+                <h3>This is cart</h3>
+                <h5>Order Summary: {cart.length}</h5>
             </div>
         </div>
     );

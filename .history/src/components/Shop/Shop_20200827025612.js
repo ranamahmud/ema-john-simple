@@ -3,16 +3,13 @@ import fakeData from '../../fakeData'
 import { useState } from 'react'
 import './Shop.css'
 import Product from '../../components/Product/Product'
-import Cart from '../../components/Cart/Cart'
 const Shop = () => {
     const first10 = fakeData.slice(0, 10);
 
     const [products, setProducts] = useState(first10);
-    const [cart, setCart] = useState([])
-    const handleAddProduct = (product) => {
-        console.log('product added',product);
-        const newCart = [...cart, product]
-        setCart(newCart)
+
+    const handleAddProduct = () => {
+        console.log('product added');
     }
     return (
         <div className="shop-container">
@@ -21,16 +18,13 @@ const Shop = () => {
                 <ul>
                     {
                         products.map(pd =>
-                            <Product 
-                            handleAddProduct = {handleAddProduct}
-                            product={pd}></Product>
+                            <Product product={pd}></Product>
                         )
                     }
                 </ul>
             </div>
             <div className="cart-container">
-                <Cart cart = {cart}></Cart>
-                
+                <h3>This is cart</h3>
             </div>
         </div>
     );
