@@ -10,12 +10,11 @@ import {
 } from "react-router-dom";
 import Review from './components/Review/Review';
 import Inventory from './components/Inventory/Inventory';
-import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
     <div>
-      <Header></Header>
+            <Header></Header>
 
       <Router>
         <Switch>
@@ -28,14 +27,11 @@ function App() {
           <Route path="/inventory">
             <Inventory></Inventory>
           </Route>
-          <Route exact path="/">    <Shop></Shop>
-        </Route>
-        <Route path="*">
-          <NotFound></NotFound>
-        </Route>
+
         </Switch>
 
-      
+        <Route path="/">    <Shop></Shop>
+          </Route>
       </Router>
     </div>
   );
