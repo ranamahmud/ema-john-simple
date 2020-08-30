@@ -15,27 +15,27 @@ import NotFound from './components/NotFound/NotFound';
 function App() {
   return (
     <div>
-      <Header></Header>
+            <Header></Header>
 
       <Router>
         <Switch>
-          <Route path="/shop">    <Shop></Shop>
+          <Route exact path="/shop">    <Shop></Shop>
           </Route>
 
-          <Route path="/review">
+          <Route exact path="/review">
             <Review></Review>
           </Route>
-          <Route path="/inventory">
+          <Route exact path="/inventory">
             <Inventory></Inventory>
           </Route>
-          <Route exact path="/">    <Shop></Shop>
-        </Route>
-        <Route path="*">
-          <NotFound></NotFound>
-        </Route>
+
         </Switch>
 
-      
+        <Route exact path="/">    <Shop></Shop>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
       </Router>
     </div>
   );
