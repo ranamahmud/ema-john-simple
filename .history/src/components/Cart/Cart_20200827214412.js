@@ -11,11 +11,12 @@ const Cart = (props) => {
         }
     return (
         <div>
-            <h4 className="text-primary">Order Summary</h4>
+            <h4>Order Summary</h4>
             <p>Items Ordered: {cart.length}</p>
             <p>Product Price: {formatNumber(total)}</p>
+            <p><small>Shipping cost: {shipping}</small></p>
             <p><small>Tax + VAT: {tax}</small></p>
-            <p>Total Price: {total  + tax}</p>
+            <p>Total Price: {total + shipping + tax}</p>
         </div>
     );
 };
