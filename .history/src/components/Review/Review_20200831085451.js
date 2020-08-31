@@ -3,7 +3,7 @@ import { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, processOrde
 import fakeData from '../../fakeData';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
-import happyImage from '../../images/giphy.gif'
+import happyImage from '../../images/gliphy.gif'
 const Review = () => {
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
@@ -30,10 +30,10 @@ const Review = () => {
         });
         setCart(cartProducts);
     }, []);
-    let thankyou;
-    if (orderPlaced) {
+    const thankyou ;
+    if(orderPlaced){
         thankyou = <img src={happyImage} />
-    }
+    } 
     return (
         <div className="twin-container">
             <div className="product-container">
@@ -41,7 +41,7 @@ const Review = () => {
                     cart.map(pd => <ReviewItem removeProduct={removeProduct} product={pd}></ReviewItem>)
                 }
                 {
-                    thankyou
+                    orderPlaced && thankyou
                 }
             </div>
             <div className="cart-container">

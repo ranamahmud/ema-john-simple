@@ -3,7 +3,7 @@ import { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, processOrde
 import fakeData from '../../fakeData';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
-import happyImage from '../../images/giphy.gif'
+import happyImage from '../../images/gliphy.gif'
 const Review = () => {
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);

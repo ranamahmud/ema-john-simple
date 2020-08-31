@@ -1,14 +1,14 @@
 import React from 'react';
 import './Cart.css'
+import { Link } from 'react-router-dom';
 const Cart = (props) => {
     const cart = props.cart;
     let total = 0;
     for (let i = 0; i<cart.length; i++) {
         const product = cart[i];
-        console.log(product);
-      
         total = total + product.price * product.quantity;
     }
+    const total = cart.reduce((total, prd) => total + prd.price * prd.quantity, 0)
 
     const tax = Math.round(total / 10, 2);
     const formatNumber = num => {
@@ -23,9 +23,9 @@ const Cart = (props) => {
             <p><small>Tax + VAT: {tax}</small></p>
             <p>Total Price: {total + tax}</p>
             <br />
-           {
-               props.children
-           }
+            <Link to="/review">
+                <button className="main-button">Review Order</button>
+            </Link>
         </div>
     );
 };
