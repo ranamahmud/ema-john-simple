@@ -8,9 +8,6 @@ const Review = () => {
 
     const removeProduct = (productKey) =>{
         console.log('remove clicked',productKey);
-        const newCart = cart.filter(pd => pd.key !== productKey);
-        setCart(newCart);
-        removeFromDatabaseCart(productKey);
     }
     useEffect(() => {
         // cart

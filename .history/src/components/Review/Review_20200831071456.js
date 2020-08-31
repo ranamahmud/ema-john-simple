@@ -7,10 +7,7 @@ const Review = () => {
     const [cart, setCart] = useState([]);
 
     const removeProduct = (productKey) =>{
-        console.log('remove clicked',productKey);
-        const newCart = cart.filter(pd => pd.key !== productKey);
-        setCart(newCart);
-        removeFromDatabaseCart(productKey);
+        console.log('remove clicked');
     }
     useEffect(() => {
         // cart
@@ -27,7 +24,7 @@ const Review = () => {
         <div>
             <h1>Cart Items {cart.length}</h1>
             {
-                cart.map(pd => <ReviewItem  removeProduct = {removeProduct}product={pd}></ReviewItem>)
+                cart.map(pd => <ReviewItem removeProduct = {removeProduct}product={pd}></ReviewItem>)
             }
         </div>
     );
