@@ -30,16 +30,16 @@ function App() {
             <Inventory></Inventory>
           </Route>
           <Route exact path="/">    <Shop></Shop>
-          </Route>
-          <Route path="/product/:productkey">
-            <ProductDetail></ProductDetail>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
+        </Route>
+        <Route path="/:productkey">
+          <ProductDetail></ProductDetail>
+        </Route>
+        <Route path="*">
+          <NotFound></NotFound>
+        </Route>
         </Switch>
 
-
+      
       </Router>
     </div>
   );

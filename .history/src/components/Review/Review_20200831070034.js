@@ -19,9 +19,7 @@ const Review = () => {
     return (
         <div>
             <h1>Cart Items {cart.length}</h1>
-            {
-                cart.map(pd => <ReviewItem product={pd}></ReviewItem>)
-            }
+            <ReviewItem></ReviewItem>
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import './Shop.css'
 import Product from '../../components/Product/Product'
 import Cart from '../../components/Cart/Cart'
-import {addToDatabaseCart } from '../../utilities/databaseManager'
+import addToDatabaseCart from '../../utilities/databaseManager'
 const Shop = () => {
     const first10 = fakeData.slice(0, 10);
 
@@ -26,7 +26,7 @@ const Shop = () => {
                         products.map(pd =>
                             <Product  showAddToCart = {true}
                             handleAddProduct = {handleAddProduct}
-                            product={pd} key={pd.key}></Product>
+                            product={pd}></Product>
                         )
                     }
                 </ul>

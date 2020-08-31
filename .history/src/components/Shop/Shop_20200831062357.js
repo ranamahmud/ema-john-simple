@@ -4,7 +4,7 @@ import { useState } from 'react'
 import './Shop.css'
 import Product from '../../components/Product/Product'
 import Cart from '../../components/Cart/Cart'
-import {addToDatabaseCart } from '../../utilities/databaseManager'
+import {addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../utilities/databaseManager'
 const Shop = () => {
     const first10 = fakeData.slice(0, 10);
 
