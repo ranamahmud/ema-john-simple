@@ -3,10 +3,10 @@ import './Cart.css'
 const Cart = (props) => {
     const cart = props.cart;
     let total = 0;
-    for (let i = 0; i<cart.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
         const product = cart[i];
         console.log(product);
-      
+
         total = total + product.price * product.quantity;
     }
 
@@ -23,9 +23,9 @@ const Cart = (props) => {
             <p><small>Tax + VAT: {tax}</small></p>
             <p>Total Price: {total + tax}</p>
             <br />
-           {
-               props.children
-           }
+            {
+                props.children
+            }
         </div>
     );
 };

@@ -20,7 +20,7 @@ const getDatabaseCart = () => {
     const dataKey = getDataKey();
     const data = localStorage.getItem(dataKey) || "{}";
     return JSON.parse(data);
-}
+ }
 
 const addToDatabaseCart = (key, count) => {
     const currentCart = getDatabaseCart();
