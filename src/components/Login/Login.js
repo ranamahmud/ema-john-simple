@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
-import { handleFbSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFramework } from './loginManager';
+import { handleFbSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFramework, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './loginManager';
 
 function Login() {
     let history = useHistory();

@@ -22,6 +22,7 @@ export const handleGoogleSignIn = () => {
             email: email,
             photo: photoURL,
         }
+        console.log(signedInUser);
         return signedInUser;
 
     }).catch(err => {
@@ -38,7 +39,6 @@ export const handleFbSignIn = () => {
         // The signed-in user info.
         var user = result.user;
         return user;
-        // ...
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
