@@ -72,10 +72,21 @@ function Login() {
 
     const handleSubmit = (e) => {
         if (newUser && user.email && user.password) {
-
+            createUserWithEmailAndPassword(user.email, user.password)
+                .then(res => {
+                    setUser(res);
+                    setLoggedInUser(res);
+                    history.replace(from);
+                })
         }
 
         if (!newUser && user.email && user.password) {
+            signInWithEmailAndPassword(user.email, user.password)
+                .then(res => {
+                    setUser(res);
+                    setLoggedInUser(res);
+                    history.replace(from);
+                })
 
         }
         e.preventDefault();
