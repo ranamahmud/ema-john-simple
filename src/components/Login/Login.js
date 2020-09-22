@@ -27,33 +27,36 @@ function Login() {
     const googleSignIn = () => {
         handleGoogleSignIn()
             .then(res => {
-                setUser(res);
-                setLoggedInUser(res);
-                history.replace(from);
+                handleResponse(res, true);
+
             })
     }
 
     const signOut = () => {
         handleSignOut()
             .then(res => {
-                setUser(res);
-                setLoggedInUser(res);
+                handleResponse(res, false);
+
             })
+    }
+
+    const handleResponse = (res, redirect) => {
+        setUser(res);
+        setLoggedInUser(res);
+        if (redirect) {
+            history.replace(from);
+        }
     }
 
     const fbSignIn = () => {
         handleFbSignIn()
             .then(res => {
-                setUser(res);
-                setLoggedInUser(res);
-                history.replace(from);
+                handleResponse(res, true);
 
             })
     }
     const handleBlur = (e) => {
         let isFieldValid = true;
-        console.log(e.target.name);
-        console.log(e.target.value);
 
         if (e.target.name === 'email') {
             isFieldValid = /\S+@\S+\.\S+/.test(e.target.value);
@@ -72,20 +75,18 @@ function Login() {
 
     const handleSubmit = (e) => {
         if (newUser && user.email && user.password) {
-            createUserWithEmailAndPassword(user.email, user.password)
+            createUserWithEmailAndPassword(user.name, user.email, user.password)
                 .then(res => {
-                    setUser(res);
-                    setLoggedInUser(res);
-                    history.replace(from);
+                    handleResponse(res, true);
+
                 })
         }
 
         if (!newUser && user.email && user.password) {
             signInWithEmailAndPassword(user.email, user.password)
                 .then(res => {
-                    setUser(res);
-                    setLoggedInUser(res);
-                    history.replace(from);
+                    handleResponse(res, true);
+
                 })
 
         }
